@@ -5,10 +5,8 @@
 using namespace std;
 const int NUM_MONTHS=12;
 int rainFall [NUM_MONTHS];
-float total = 0;
-//float average;
+//int total = 0; 
 int calculateAverageRainFall(int, int);
-int ceil (float, int);
 
 string month[NUM_MONTHS] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
@@ -24,26 +22,24 @@ void inputRainFall(int rainFall[],int size)
     }
     
  int calculateAverageRainFall(int rainFall[], int NUM_MONTHS)
+   {int total= 0;
+   int average = 0;
    {  for(int i = 0; i < NUM_MONTHS; i++)
       total = total+rainFall[i];
-      return total;
-    }
-    //float average = total/NUM_MONTHS;
-   // cout << average << endl;
-   //cout << float average = ceil(total /NUM_MONTHS);
-   //cout << average <<endl;
-   //return 0;
-
+   }
+    average=ceil(float(total/12));
+    cout <<"\tAverage " << average;
+    return average;
+ }
 
 main ()
-{ cout<< rainFall[0] << endl; 
+{ /*cout<< rainFall[0] << endl; */
 inputRainFall(rainFall, NUM_MONTHS);
 for(int i =0; i < NUM_MONTHS; i++){
-cout << rainFall[i] << ' ';
+cout << rainFall[i] << ' ' <<endl;}
 
-//calculateAverageRainFall(rainFall, NUM_MONTHS);
- }
- cout << endl;
+calculateAverageRainFall(rainFall, NUM_MONTHS);
+
     };
 
 
